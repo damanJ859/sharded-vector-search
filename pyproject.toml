@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sharded-vector-search"
+version = "0.1.0"
+description = "Local FAISS-backed sharded vector search reference implementation."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { file = "distributed_db/LICENSE" }
+authors = [
+  { name = "Damanjit" }
+]
+dependencies = [
+  "chromadb>=0.5.0",
+  "faiss-cpu>=1.8.0",
+  "Flask>=3.0.0",
+  "numpy>=1.26.0",
+  "PyYAML>=6.0.0"
+]
+
+[project.urls]
+Repository = "https://github.com/damanJ859/sharded-vector-search"
+
+[project.scripts]
+sharded-vector-search = "distributed_db.run:main"
+
+[tool.setuptools.packages.find]
+include = ["distributed_db*"]

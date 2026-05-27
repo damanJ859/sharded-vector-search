@@ -41,6 +41,12 @@ pip install -r requirements.txt
 cp .env.example .env
 ```
 
+For editable package installation:
+
+```bash
+pip install -e .
+```
+
 Edit `.env` if your Chroma store, shard output path, API host, or vector dimension differs.
 
 ## Build Shards

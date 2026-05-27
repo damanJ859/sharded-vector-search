@@ -9,6 +9,12 @@ pip install -r requirements.txt
 cp .env.example .env
 ```
 
+Optional editable package install:
+
+```bash
+pip install -e .
+```
+
 ## Generate Shards
 
 Create shards from a local Chroma store:
