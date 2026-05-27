@@ -1,0 +1,46 @@
+database:
+  name: "Distributed Vector Database"
+  description: "Local FAISS-backed distributed vector search reference implementation"
+
+sharding:
+  num_shards: 3
+  strategy: "LSH"  # Locality-Sensitive Hashing
+  lsh_bits: 10
+
+indexing:
+  type: "FAISS"
+  metric: "L2"  # L2 distance (converted to cosine similarity for normalized vectors)
+  normalized: true
+
+vectors:
+  dimension: 1536
+  source: "Chroma collection or compatible embedding source"
+
+search:
+  default_k: 10
+  default_results_per_shard: 20
+  merge_strategy: "score_ranking"
+
+api:
+  host: "0.0.0.0"
+  port: 5000
+  debug: false
+
+data_sources:
+  chroma:
+    path: "Vec_Store"
+    collection: "langchain"
+    enabled: true
+  
+  distributed:
+    path: "distributed_db/data/shards"
+    enabled: true
+
+performance:
+  target_latency_ms: 1.0
+  cache_enabled: false
+  batch_query_enabled: false
+
+logging:
+  level: "INFO"
+  file: "logs/distributed_db.log"

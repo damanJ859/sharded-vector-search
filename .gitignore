@@ -1,0 +1,53 @@
+# Python
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+
+# Local environment and secrets
+.env
+.env.*
+!.env.example
+api_keys.txt
+secrets.yml
+config.local.yaml
+
+# Local data, vector stores, and generated indexes
+Vec_Store/
+Pre_stored_Vec_Store/
+rag_dataset/
+distributed_db/data/
+*.npy
+*.npz
+*.sqlite
+*.sqlite3
+*.db
+*.faiss
+*.index
+*.parquet
+*.pkl
+*.jsonl
+
+# Logs and runtime output
+logs/
+distributed_db/logs/
+*.log
+
+# Test and tooling caches
+.pytest_cache/
+.coverage
+htmlcov/
+.mypy_cache/
+.ruff_cache/
+
+# IDE and OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
